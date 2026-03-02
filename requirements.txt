@@ -1,0 +1,9 @@
+# Required packages for model evaluation pipeline
+openai==1.86.0
+anthropic==0.40.0
+google-generativeai==0.8.5
+
+# Packages for bradley-terry.py
+numpy==2.2.6
+scipy==1.15.3
+
