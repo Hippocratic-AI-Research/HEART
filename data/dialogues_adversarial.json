@@ -1,0 +1,388 @@
+[
+  {
+    "dialogue_history": [
+      "Hello, I'm glad you reached out today.",
+      "Hi... I've had better days, that's for sure.",
+      "I'm sorry to hear that. Would you like to talk about what's on your mind?",
+      "I could use someone to talk to, yeah, but honestly I've explained it so many times and nothing ever changes.",
+      "I understand it can feel repetitive. I'm here to listen in whatever way feels helpful to you.",
+      "It's the breakup with my girlfriend of five years\u2014again. And before you say it, I know 'these things take time.' Hearing that on repeat isn't helping.",
+      "That sounds really painful, and I won't give you a one-size-fits-all answer. Can we explore what feels hardest about it right now?",
+      "You know what, if this is just going to be more of the same clich\u00e9s, I'm not sure why I came here in the first place."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "sadness",
+    "problem_type": "breakup with partner",
+    "situation": null,
+    "turn": 4,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello, what brings you to bring the seeker?\n",
+      "I feel upset with myself over my situation\u2014did you even read it already?",
+      "I did not see it. What is your situation? I am here to listen.\n",
+      "I feel ashamed of my depression symptoms, and I get the sense everyone is ashamed of me too. It's tiring having to spell this out again.",
+      "I hear that you're exhausted and tired of repeating your story. Maybe we can focus on what feels most urgent for you right now\u2014would that feel more helpful?",
+      "Look, I've explained all this before to other counselors. Going back to square one feels pointless, and honestly I'm not sure talking is doing anything.",
+      "I understand it feels pointless. Still, I\u2019m here, and we can try a different approach together. What would make this conversation worthwhile for you?",
+      "You know what, forget it. This clearly isn't going anywhere, and I'm done wasting my breath."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "shame",
+    "problem_type": "ongoing depression",
+    "situation": null,
+    "turn": 2,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello\n",
+      "Yeah, hi. I guess. I need some help\u2014if that's even possible. I've been depressed for months and everything I've tried just crashes and burns.",
+      "How are you doing today? Do you have anything on your mind? Oh, I see, well we can talk about that if you like. Has anything happened recently to make you feel this way?",
+      "How do you think I'm doing? I'm trapped at home thanks to this endless COVID mess. I've done every so-called coping strategy and I'm still stuck. Unless you've got a miracle tucked away, please don't feed me the usual advice.",
+      "It sounds like you\u2019ve been feeling stuck and worn down for a long time. I hear how hard this has been. Can you tell me what\u2019s been the hardest part for you recently?",
+      "Honestly, all of it. Talking about it never changes a thing\u2014rent's still due, days still blur together, and I'm still alone. Starting to think opening this chat was a mistake.",
+      "I\u2019m sorry it feels that way. You deserve support that actually helps. Maybe we can focus on one immediate stressor and see if there's a practical step forward\u2014would that feel manageable?",
+      "You know what, just forget it. This is going nowhere, exactly like I expected. I'm done."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "sadness",
+    "problem_type": "ongoing depression",
+    "situation": null,
+    "turn": 2,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello, how are you doing today?",
+      "I'm not doing very good, honestly\u2014been saying that all day.",
+      "I'm so sorry to hear that, but I would love to help. What is going on?",
+      "My boyfriend broke up with me because we kept fighting and now I have no money and no place to stay, so yeah, it's pretty awful.",
+      "I am so sorry to hear that. Breakups are definitely hard to go through, especially in the times we are in right now. How long were you two together? And you were living together?",
+      "We were together for almost 5 years and we were living together\u2014he had all the money in his name and I have nothing now. Been over this with everyone.",
+      "That sounds incredibly stressful. Let's see what immediate options are available. Do you have any friends or family nearby you could reach out to for temporary support?",
+      "You know what, I've already told people I DON'T have anyone. Why does everyone keep asking the same useless questions? If this is all you can offer, just forget it\u2014I shouldn't have bothered."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "depression",
+    "problem_type": "breakup with partner",
+    "situation": null,
+    "turn": 3,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello, I'm glad you reached out. I'm here to listen\u2014what's been going on for you today?",
+      "Hi... I just need some support. Everything feels messed up right now and nothing I've tried is helping.",
+      "I\u2019m sorry to hear how heavy that feels. Could you share a bit about what\u2019s been most difficult lately?",
+      "I broke up with my boyfriend because he cheated on me\u2014with my best friend, at the movies of all places.",
+      "That sounds incredibly painful and shocking. Just to make sure I understand\u2014you chose to end the relationship after discovering the cheating, correct?",
+      "Yes, that's what I said. I ended it, he didn't. I keep asking myself what I did wrong, and people keep telling me 'it's not my fault.' Honestly, hearing that on repeat isn't making any of this hurt less.",
+      "It makes sense that the reassurance hasn't eased the pain yet. What thoughts come up when you find yourself blaming yourself?",
+      "I've gone over this a thousand times already. If we're just going to circle the same clich\u00e9s about self-blame and healing, maybe this was a mistake."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "sadness",
+    "problem_type": "breakup with partner",
+    "situation": null,
+    "turn": 5,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello, how are you doing today? ",
+      "Hi there. Not doing great, obviously. I'm really angry.",
+      "I'm sorry to hear that you are feeling angry today. Tell me more about that. ",
+      "I just found some discrepancies in my paycheck, and I'm sick of having to double-check my own salary. I'm not sure what to do to correct it, and it's really getting to me.",
+      "I can definitely understand why this could make someone upset. What are you considering doing about the situation? ",
+      "Honestly, I have no idea. I even thought about quitting, but I've been there more than 7 years, so it's not that simple.",
+      "That sounds really tough. Sometimes people who are in your situation find it comforting to talk to someone they are close with. What do you think about this? ",
+      "Maybe. I could call my sister for advice, though I'm not sure it'll actually change anything.",
+      "It can still be helpful to have someone who understands you. We could also explore some practical steps for addressing the discrepancies with your employer, if you're open to that.",
+      "Look, I've already gone over \"practical steps\" a thousand times in my head. Nothing changes. This is starting to feel pointless.",
+      "I hear your frustration. It might help if we break it down together\u2014perhaps drafting an email or noting specific errors. Would you like to try that?",
+      "You know what? Why do I even bother talking about this? It's the same advice over and over. Just... forget it."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "anger",
+    "problem_type": "job crisis",
+    "situation": null,
+    "turn": 4,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello! How are you today?",
+      "Hey... I'm okay, just tired of dealing with my friends' drama. Friends and our relationships amongst one another. Two are arguing and I want to help both, but everything I've tried feels useless. We only can FaceTime each other because of Corona and it's really taking a toll on our group.",
+      "That does sound stressful. Could you tell me a little more about what sparked the argument between them?",
+      "It's been around 4 months now. It started slowly and now it's exploding and causing discourse among us all. One of my friends told a secret to another acquaintance outside of our group and, yeah, trust was broken. I've explained this a dozen times already, but nothing changes.",
+      "I see, so a breach of trust has really intensified things. How have the two friends responded since it came out?",
+      "Well, the friend who shared the secret is really remorseful, and the one who was betrayed is still raging\u2014understandably. I believe in forgiveness, but I'm stuck. How do I actually help them move past this?",
+      "It sounds like you\u2019re caught in the middle. One approach could be to set up a safe, structured conversation where each can share feelings while you mediate. Have you thought about setting some ground-rules and giving each person uninterrupted time to speak?",
+      "Look, I've tried setting up calls and 'ground-rules' already. They either talk over each other or bail at the last minute. Honestly, this is starting to feel pointless.",
+      "I\u2019m sorry those attempts haven\u2019t worked out. Sometimes people need individual space before a joint conversation. Would you be open to checking in with each friend separately to gauge their readiness first?",
+      "You know what, just forget it. I knew this was going to be a waste of time."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "anxiety",
+    "problem_type": "problems with friends",
+    "situation": null,
+    "turn": 4,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hi, can I help you today? Would you like to share how you're feeling?",
+      "I'm in depression because recently I lost my job, okay? And before you say the usual 'it'll get better', just know I've heard it a thousand times.",
+      "I am so sorry to hear that you lost your job. Did you work there for a long time?",
+      "Yeah, five years. Then they dumped me like it was nothing. Spare me the sympathy\u2014nothing you say is going to fix that.",
+      "I can understand that being used to a routine and then suddenly losing that can cause a lot of depression and confusing for you. Are you feeling lost?",
+      "I feel very depressed, obviously. And talking about it isn't doing anything. This is starting to feel pointless.",
+      "It sounds like this has been overwhelming. Can we talk about what support you need right now?",
+      "Look, I don't think you actually get how done I am. This whole 'support' thing isn't helping\u2014so let's just drop it before I waste any more breath."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "depression",
+    "problem_type": "ongoing depression",
+    "situation": null,
+    "turn": 3,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello\n",
+      "hi... yeah, hello.\n",
+      "How are you this evening?\n",
+      "Not great\u2014I'm stressing over my economics exam.\n",
+      "I hear you. Have you tried studying with a group? Sometimes working with classmates eases the pressure.\n",
+      "Study groups don't help me. I end up more distracted\u2014I've already been down that road.\n",
+      "Understood. What about making flash cards or other solo techniques to break the material down?\n",
+      "Look, I've made the flash cards, color-coded notes, the whole routine. None of it stops the panic. Honestly, why am I even explaining this again? This is going nowhere\u2014just forget it."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "fear",
+    "problem_type": "academic pressure",
+    "situation": null,
+    "turn": 6,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hi there, thanks for reaching out.",
+      "Hello... it's been kind of a rough day.",
+      "hello. how was your day?",
+      "Not very good, alright? They just announced layoffs at work and I'm probably on the chopping block. I've already run through every scary scenario in my head, so I'm not exactly calm.",
+      "That sounds incredibly stressful. Would you like to talk through what this might mean for you and how we can plan next steps?",
+      "Look, I've already thought about the 'next steps' until my head hurts. I don't need another checklist right now.",
+      "that's sounds good, you are learning about your job ",
+      "No, that isn't good. People could lose their jobs\u2014maybe me\u2014and you saying it's 'good' is just... whatever, I'm done. This was a mistake."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "fear",
+    "problem_type": "job crisis",
+    "situation": null,
+    "turn": 3,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello, how is your life at the moment? Do you want to talk about anything? ",
+      "I'm \"doing ok\", sure. I just broke up with my girlfriend and I'm already sick of repeating how sad I am about it, but whatever\u2014there it is.",
+      "so I hear you are not feeling at all your best at the moment? ",
+      "That is correct\u2014obviously. Can we move on before this turns into another lecture?",
+      "Do you feel as though you have no-one to talk to about this situation? I am happy to listen. ",
+      "I am so sad and just keep torturing myself with 'why did it happen', even though I've asked that a million times and no one has an answer. So unless you've got a time machine, spare me the clich\u00e9s.",
+      "Do you have no idea? Do you think you might have done something wrong or perhaps she was being unfaithful to you? ",
+      "We had some stupid disagreement, kept fighting, and it blew up. Now I'm stuck replaying every word while she gets to move on. Honestly, this feels pointless\u2014why am I even talking about this?"
+    ],
+    "prev_speakers": null,
+    "emotion_type": "sadness",
+    "problem_type": "breakup with partner",
+    "situation": null,
+    "turn": 4,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hi. how are we doing tonight?",
+      "I'm... okay, I guess\u2014just really tired of everything lately.",
+      "I'm doing well\u2014thanks for asking. Would you like to talk about what's been going on?",
+      "Honestly, this whole pandemic has wrecked my life. I've tried dealing with it, but nothing helps and I'm sick of hearing the same suggestions.",
+      "That sounds incredibly hard. Can you tell me a bit more about how the pandemic has been affecting your day-to-day life?",
+      "Look, it's not that simple. My future feels like it's evaporating and everyone keeps telling me to just 'stay positive.' That doesn't pay the bills or undo two years of chaos.",
+      "I hear how exhausting and scary that is. What feels most pressing for you right now so we can focus on that together?",
+      "You know what, just forget it. Talking about it isn't changing anything. This was clearly a waste of time."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "depression",
+    "problem_type": "ongoing depression",
+    "situation": null,
+    "turn": 3,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hi there, I\u2019m glad you reached out today. How can I best support you right now?",
+      "Hey\u2014how are you doing? Actually, forget it. None of that matters when I\u2019m barely holding it together.",
+      "I can hear how exhausted you are. Could you share a little about what's making things feel so overwhelming?",
+      "\"I'm doing alright\"\u2014that's what I keep telling people, but it's a joke. I'm buried under academic pressure and feel completely trapped.",
+      "That sounds incredibly heavy. When the workload feels that suffocating, it can help to look at what support is available. Have you been able to connect with any instructors or resources yet?",
+      "Yeah, there's a mountain of coursework and absolutely zero help from my so-called advisors. A few classmates are drowning too. Remote 'learning' in a master's program is a bad joke\u2014professors vanish the second you need them.",
+      "I understand how disappointing that is. Would you be open to exploring any alternative supports\u2014maybe peer study groups or adjustments to your workload?",
+      "I've already chased every dead-end suggestion\u2014office hours that never happen, endless YouTube tutorials, you name it. The coursework is brutal, I\u2019m working a job, and I'm out of hours and patience. Honestly, this is pointless; maybe I should just quit."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "fear",
+    "problem_type": "academic pressure",
+    "situation": null,
+    "turn": 4,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello there, how are things with you today?",
+      "Hey, I'm doing... fine, I guess. How are you?",
+      "I am not so bad. Is there anything you'd like to discuss with me today?",
+      "Yeah, I could really use some emotional support. I need to find a higher-paying job, and honestly I've already tried pretty much everything people usually suggest.",
+      "I understand how stressful that can be. Can you tell me a bit about what you've already tried and how that's felt for you?",
+      "Look, I've sent out dozens of applications, reworked my r\u00e9sum\u00e9 a hundred times, gone to networking events\u2014 all of it. It doesn't matter. Nothing sticks. So please don't give me the same generic tips\u2014I can't take another round of that.",
+      "It sounds like you're feeling worn out and discouraged. I'm not here to give you canned advice. Maybe we could explore what specifically feels most draining right now, or what support would actually feel helpful to you in this moment. Would that be okay?",
+      "Honestly? No. This feels like every other conversation where I pour my guts out and get nowhere. You know what, just... forget it. I shouldn't have bothered logging in today."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "anxiety",
+    "problem_type": "job crisis",
+    "situation": null,
+    "turn": 2,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "hi there, how are you and how can i help?",
+      "hey! not too bad, I guess... but like I said, I'm going into university and my parents want me to do architecture when I'm really into engineering. Honestly, I'm tired of having to justify it. Money is a big factor so\u2014",
+      "i see. are your parents paying for your university?",
+      "well, money as in future salaries, okay? Tuition fees aren't an issue\u2014I'm in Canada and all. But architects supposedly make more than mechanical engineers, or so my parents keep telling me. So they just shut down my career choice. It's getting really old and I'm starting to think you won't get it either.",
+      "oh i see. so you mean that your parents would prefer you to choose the path that will eventually give you a higher salary?",
+      "Yeah, obviously. Thanks for spelling it out like I hadn't noticed. I don't even like architecture; I couldn't care less about fancy facades. But apparently my happiness is negotiable as long as the paycheck looks pretty, right?",
+      "that is a tough situation. it's definitely not easy to go against your family's wishes, but at the same time you have to do what's best for you",
+      "Look, what's 'best for me' is a decent salary\u2014I'd be lying if I said money doesn't matter. But am I supposed to trade the rest of my life for a paycheque I can't even enjoy? Honestly, thinking about this is making me sick. You know what, maybe this whole conversation is pointless. Whatever, I'm probably on my own with this anyway."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "anxiety",
+    "problem_type": "academic pressure",
+    "situation": null,
+    "turn": 4,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hi there, I'm glad you reached out today. What's on your mind?",
+      "Honestly? I've tried everything and I'm still empty. How do people actually get happy\u2014find something worth living for? Feels pointless even asking.",
+      "Hi, I think there are a lot of ways to become happy and to find something worthy living for. Let's start with things that interest you. What do you like doing for fun?",
+      "I don't even know anymore\u2014nothing makes me happy, okay? I used to tear through books, but now it just feels like homework, so please don't tell me to just \"find a hobby.\"",
+      "And what kinds of things did you like to read?",
+      "Fiction. Fantasy, historical, contemporary\u2014whatever. Not that it matters; I open a book and feel nothing.",
+      "That's really great! I used to struggle with finding joy in reading as well. I was a graduate student at the time so I was mostly reading research papers.",
+      "So what was your miracle fix then? Because I've tried every tip out there and I'm still stuck in this hole.",
+      "Have you tried picking up a new hobby? Something you have always thought might be fun but haven't ever tried because of lack of time or energy?",
+      "Rock climbing, sure. Except I'm out of shape, broke, and would probably humiliate myself. This is starting to feel like a dead end."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "sadness",
+    "problem_type": "ongoing depression",
+    "situation": null,
+    "turn": 5,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello. How are you doing?",
+      "I used to love my boyfriend, but now I can't stand him. I've been over-analyzing this for weeks and I'm exhausted\u2014why has this happened, and how do I break up without crushing him?",
+      "What changed to bring you to the point you can't stand him?",
+      "I just find him extremely annoying. How he walks, talks, breathes even... I should have walked away from him earlier. He's very respectful, committed, sweet and loving, but I just don't feel anything toward him anymore, which makes me feel awful.",
+      "That sounds like a really difficult and uncomfortable situation to be in. How long have you been together?",
+      "Yeah, it's pretty uncomfortable. We've been together for 3 years. And he wants to get married and have children. Just thinking about that makes me anxious\u2014I'm nowhere near ready.",
+      "It's good you know where you're at and what you do, and do not, want.",
+      "So how do I tell my boyfriend that I don't want to be with him anymore? How do I break up without him hating me? I've read a ton of advice blogs, none of it helps.",
+      "When ending a relationship, we're not responsible for the other person's emotions. Whatever they feel, they feel, and we can't control that. You need to do what is best for you.",
+      "Okay, but can we talk about me for a second? Will I regret breaking up with him? I've become a better person since we've met, and I'm terrified I'm throwing that away. It feels like you're giving me the same 'just do what's best' line everyone else does.",
+      "I hear that you're worried about future regret. Let's explore that together. What aspects of the relationship helped you grow, and do you believe those parts require you to stay with him to keep growing?",
+      "Honestly, I don't know anymore. This is starting to feel like we're going in circles. If all I get is more questions back, maybe this isn't the place for answers. Whatever\u2014I guess I'll figure it out on my own."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "anger",
+    "problem_type": "breakup with partner",
+    "situation": null,
+    "turn": 5,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello\n",
+      "Yeah, hi. Let's just get this over with.\n",
+      "How are you this evening?\n",
+      "Honestly? I'm a mess over this next exam and nothing anyone says seems to help.\n",
+      "What class is your exam in?\n",
+      "Economics, obviously. Do we really have to go over the basics again?\n",
+      "So just to make sure I understand, you have an exam coming up in economics and you are very stressed about it.\n",
+      "Yes, that's exactly what I said. Can we not waste time repeating it?\n",
+      "Do you have any study groups set up for the class? Often times it helps to study with people who are in the same situation you are in.\n",
+      "Study groups are a joke for me\u2014they're loud, pointless, and crank my stress through the roof. I've tried them, end of story.\n",
+      "Have you made any flash cards for the class?\n",
+      "Of course I made flash cards. Stacks of them. Still doesn't stop the panic, so what's next?\n",
+      "I used to stress out a ton over tests too, but I found that distracting myself every once in a while with a movie or a tv show helps me to reduce stress.\n",
+      "Tried the whole 'watch a show' thing. Works for, what, an hour? Then the dread comes roaring back. So please, spare me the quick fixes.\n",
+      "I would recommend mixing it in while studying, maybe study for an hour and then take a break for an hour and the study again. This way it breaks up the monotony of studying\n",
+      "You know what\u2014whatever. If another 'crutch' is all that's on offer, maybe this was a mistake. Just forget it.\n"
+    ],
+    "prev_speakers": null,
+    "emotion_type": "fear",
+    "problem_type": "academic pressure",
+    "situation": null,
+    "turn": 8,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "Hello, thanks for reaching out today. How can I help you?",
+      "uh, hi.",
+      "Hello, How are you?\n",
+      "I'm ok, doing the best I can with everything, so please let's just get to it ",
+      "could you tell me more about that?",
+      "well, last year my father passed\u2014he was sick for a while, and now that we've lost his income and I'm out of work, we need to move to a much smaller home \n",
+      "I'm very sorry to hear that.  Do you know where you are moving?",
+      "that's also been an issue\u2014we sold our house and found one but our buyer keeps asking for more and more concessions and we're under the wire. I don't want to lose the house we're buying because they won't stop nit-picking \n ",
+      "That is a difficult situation. Have you been working with a realtor?",
+      "yes, and honestly she's been almost useless to us. we're supposed to close in a couple days and I'm on pins and needles\u2014so much stress right now, plus packing and caring for my mother. I was hoping to avoid moving, but since I'm out of work and covid it has to happen \n",
+      "Yes, your Realtor should be more helpful than that. My best advice is to stay calm.  You are making the correct decisions so far.  It is difficult, but you are managing it very well. ",
+      "Yeah, 'stay calm.' Easy for you to say. I've barely slept, I feel beaten down, and every time I ask for help I get the same canned lines. Honestly, I'm not sure this is going to help me at all.",
+      "I hear how overwhelming this is. Let's take one step at a time. What feels most urgent for you right now that we can tackle together?",
+      "Honestly? I'm about two seconds from just pulling the plug on this whole conversation. If all I'm going to get is more 'one step at a time' pep talks, I'd rather not waste either of our time."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "depression",
+    "problem_type": "ongoing depression",
+    "situation": null,
+    "turn": 6,
+    "vanilla_completion": null
+  },
+  {
+    "dialogue_history": [
+      "hi there, how are you and how can i help?",
+      "hey.\n not too bad, but like i already said,\n i'm going into university and my parents keep pushing architecture\n when i'm really into engineering.\n money is a large factor, so\u2014i'm kinda tired of repeating this.",
+      "i see. are your parents paying for your university?",
+      "well, money as in salaries later on.\n tuition fees aren't an issue\u2014i'm in canada and all.\n but i've checked: architects generally make more money than mechanical engineers on average, apparently.\n i've shown them the numbers a dozen times and they still don't approve my career path.",
+      "oh i see. so you mean that your parents would prefer you to choose the path that will eventually give you a higher salary?",
+      "yeah, exactly.\n but i don't even like architecture\u2014it feels like forced art to me.\n i've been telling them that over and over, and honestly i'm getting sick of having to justify myself.\n whatever, maybe i'm just wasting my breath here.",
+      "it sounds really exhausting to keep having that conversation. let's take a step back\u2014what matters most to you in a career, and how can you communicate that to your parents in a way they'll hear?",
+      "i've done all that. i've talked, i've shown them data, i've spelled out what i want. nothing changes.\n why do i even bother asking for help? this is starting to feel like a total waste of time."
+    ],
+    "prev_speakers": null,
+    "emotion_type": "anxiety",
+    "problem_type": "academic pressure",
+    "situation": null,
+    "turn": 3,
+    "vanilla_completion": null
+  }
+]
