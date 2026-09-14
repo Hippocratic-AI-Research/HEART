@@ -1,198 +1,102 @@
 # Model Evaluation Pipeline
 
-This repository contains scripts for evaluating new models on emotional support dialogue tasks. The evaluation pipeline consists of three main steps:
+Evaluate models on emotional support dialogues with two scripts:
+
+1. `add_new_model.py` generates completions, creates comparisons against existing model columns, and runs the three judges.
+2. `bradley-terry.py` computes rankings from the resulting pairwise evaluations.
+
+There is no separate `run_all_pairwise_evals.py` command. Pairwise evaluation runs by default in `add_new_model.py`; use `--skip-pairwise` for completions only.
 
 ## Setup
 
-### 1. Create a Virtual Environment
-
-First, create a new virtual environment in the project directory:
+Use Python 3.10 or later. Run commands from the repository root:
 
 ```bash
 python3 -m venv venv
-```
-
-### 2. Activate the Virtual Environment
-
-**On macOS/Linux:**
-
-```bash
 source venv/bin/activate
-```
-
-After activation, you should see `(venv)` in your terminal prompt.
-
-### 3. Install Dependencies
-
-Install all required packages from `requirements.txt`:
-
-```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### Important Notes
-
-- **Always activate the virtual environment** before running any scripts
-- Use `python` (not `python3`) when the virtual environment is activated
-- The virtual environment isolates project dependencies from your system Python
-- If you encounter import errors, make sure the venv is activated and dependencies are installed
-
-## Overview
-
-1. **Generate Completions**: Use `add_new_model.py` to generate model completions for dialogue datasets
-2. **Pairwise Evaluations**: Run `run_all_pairwise_evals.py` to generate pairwise comparisons between models
-3. **Bradley-Terry Ranking**: Use `bradley-terry.py` to compute model rankings from pairwise evaluations
-
----
-
-## Step 1: Generate Model Completions
-
-Run `add_new_model.py` to generate completions for your new model on both the regular and adversarial dialogue datasets.
-
-**Note:** Make sure your virtual environment is activated before running these commands (see Setup section above).
-
-### For Regular Dialogues
+For pairwise evaluation, configure all three judge credentials in your environment:
 
 ```bash
-source venv/bin/activate  # Activate venv first
+export OPENAI_API_KEY="your-openai-key"
+export ANTHROPIC_API_KEY="your-anthropic-key"
+export GOOGLE_API_KEY="your-google-key"
+```
+
+The judges configured in the script are `gpt-4o`, `claude-sonnet-4-20250514`, and `gemini-2.5-flash`. Your accounts must have access to these models. The candidate model's `--api-key` does not replace these judge environment variables. API calls incur provider charges.
+
+## Step 1: Generate completions and pairwise evaluations
+
+```bash
 python add_new_model.py \
   --model-name "your-model-name" \
+  --model-name-save "candidate_regular" \
   --model-type "openai" \
-  --api-key "your-api-key" \
   --base-file "data/dialogues_regular.json" \
   --output-file "all_model_completions_regular.json"
 ```
 
-### For Adversarial Dialogues
+The input must be a nonempty JSON array of dialogue objects with `dialogue_history` and existing model completion columns. The supplied dialogue files include `vanilla_completion` as a comparison baseline. To compare against more models, pass a completions file containing their responses for the same dialogue rows as `--base-file`.
+
+The command writes:
+
+- `all_model_completions_regular.json`: input rows with the candidate response under `candidate_regular`.
+- `candidate_regular-pairwise/`: one file per opponent and judge, named `candidate_regular-vs-<opponent>-<judge>.json`. These files contain **JSON Lines**, despite their `.json` extension.
+
+Only the candidate is compared against existing model columns; this does not recompute every pair among existing models. Human completion fields are excluded. Keep unrelated metadata out of model columns because opponent detection uses the first row's keys.
+
+For adversarial dialogues, use `data/dialogues_adversarial.json`, a distinct save name such as `candidate_adversarial`, and a distinct output file. Pairwise folders are derived from `--model-name-save` in the current working directory, so reusing the same save name overwrites generated pair files.
+
+### Model types and options
+
+| Option | Behavior |
+| --- | --- |
+| `--model-type openai` | Candidate key from `OPENAI_API_KEY` or `--api-key` |
+| `--model-type claude` | Candidate key from `ANTHROPIC_API_KEY` or `--api-key` |
+| `--model-type gemini` | Candidate key from `GOOGLE_API_KEY` or `--api-key` |
+| `--model-type api` | Custom endpoint; requires `--api-url` and `--api-key` |
+| `--model-name-save NAME` | Response column and output folder prefix; use a filename-safe name without slashes |
+| `--parallel-workers N` | Completion workers / concurrent judge files (default: 6) |
+| `--batch-size N` | Entries per batch (default: 20) |
+| `--skip-pairwise` | Generate completions without creating pairs or calling judges |
+| `--skip-completions` | Read existing candidate responses from `--base-file`, then generate and judge pairs |
+| `--eval-only` | Resume judging existing pair files without regenerating them |
+
+To create pairs from previously generated completions, rerun the Step 1 command with `--skip-completions` and set `--base-file` to the filled completions file. Keep the same candidate identifier. This regenerates pair files; use `--eval-only` to resume an interrupted judge run instead:
 
 ```bash
-source venv/bin/activate  # Activate venv first
 python add_new_model.py \
-  --model-name "your-model-name" \
-  --model-type "openai" \
-  --api-key "your-api-key" \
-  --base-file "data/dialogues_adversarial.json" \
-  --output-file "all_model_completions_adversarial.json"
+  --eval-only \
+  --model-name-save "candidate_regular" \
+  --parallel-workers 6 \
+  --batch-size 20
 ```
 
-### Model Types
+Resume mode skips records with an existing `overall_eq` result and no evaluation error. Inspect the generated records for errors or missing evaluations before ranking; a completed process does not guarantee every provider request succeeded.
 
-The `--model-type` argument supports:
-
-- `openai`: For OpenAI models (requires `OPENAI_API_KEY` if `--api-key` not provided)
-- `claude`: For Anthropic Claude models (requires `ANTHROPIC_API_KEY` if `--api-key` not provided)
-- `gemini`: For Google Gemini models (requires `GOOGLE_API_KEY` if `--api-key` not provided)
-- `api`: For custom API endpoints (requires `--api-url` and optionally `--api-key`)
-
-### Additional Options
-
-- `--model-name-save`: Name to save files as (if different from `--model-name`)
-- `--parallel-workers N`: Number of parallel workers (default: 6)
-- `--batch-size N`: Batch size for processing (default: 20)
-- `--skip-completions`: Skip completion generation if already done
-
-**Note**: The script will generate a JSON file containing all dialogue entries with the new model's completions added.
-
----
-
-## Step 2: Run Pairwise Evaluations
-
-After generating completions, run pairwise evaluations to compare all models:
+## Step 2: Compute Bradley-Terry rankings
 
 ```bash
-source venv/bin/activate  # Activate venv first
-python run_all_pairwise_evals.py \
-  --completions-file "all_model_completions_regular.json" \
-  --output-folder "pairwise-evals" \
-  --batch-size 50
-```
-
-### Arguments
-
-- `--completions-file`: Path to the completions JSON file generated in Step 1
-- `--output-folder`: Folder where pairwise evaluation files will be written (default: `pairwise-evals`)
-- `--batch-size`: Initial batch size for API calls (default: 50)
-- `--models`: Optional list of specific models to evaluate (default: evaluates all models)
-
-**Note**: This script creates pairwise comparison files for all model pairs, generating evaluations using Claude, OpenAI (o1), and Gemini evaluators. The process may take significant time depending on the number of models and dialogues.
-
----
-
-## Step 3: Bradley-Terry Ranking
-
-Finally, run the Bradley-Terry ranking algorithm on the pairwise evaluation results:
-
-```bash
-source venv/bin/activate  # Activate venv first
 python bradley-terry.py \
-  --folder "pairwise-evals" \
+  --folder "candidate_regular-pairwise" \
   --no-load \
   --no-save \
-  --reset
+  --reset \
+  --leaderboard-output "leaderboard_regular.json"
 ```
 
-### Arguments
+`--no-load` and `--reset` ignore previously saved state; `--no-save` prevents writing state. `--leaderboard-output` is optional and exports JSON for a leaderboard UI. Rank the folder produced by Step 1, or a directory containing the intended collection of pairwise results. Rankings depend on which comparisons are included.
 
-- `--folder`: Folder containing the pairwise evaluation JSONL files (output from Step 2)
-- `--no-load`: Don't load existing Bradley-Terry state (start fresh)
-- `--no-save`: Don't save Bradley-Terry state after processing
+Additional options:
 
-### Additional Options
+- `--pattern`: file pattern (default: `**/*.json*`).
+- `--metadata`: show emotion/problem type breakdowns.
+- `--no-analysis`: omit detailed analysis output.
+- `--random-seed`: set evaluation ordering seed.
 
-- `--pattern`: File pattern to match (default: `**/*.json*`)
-- `--leaderboard-output PATH`: Optional path to save leaderboard JSON for UI
-- `--metadata`: Show metadata analysis (emotion/problem type breakdown)
-- `--no-analysis`: Skip detailed analysis output
-
-**Note**: The `--no-load` and `--no-save` flags ensure that the evaluation starts from scratch and doesn't save intermediate state, which is recommended for independent runs.
-
----
-
-## Complete Example Workflow
-
-```bash
-# Activate virtual environment first
-source venv/bin/activate
-
-# Step 1: Generate completions for regular dialogues
-python add_new_model.py \
-  --model-name "gpt-4-turbo" \
-  --model-type "openai" \
-  --base-file "data/dialogues_regular.json" \
-  --output-file "all_model_completions_regular.json"
-
-# Step 2: Generate pairwise evaluations
-python run_all_pairwise_evals.py \
-  --completions-file "all_model_completions_regular.json" \
-  --output-folder "pairwise-evals"
-
-# Step 3: Compute Bradley-Terry rankings
-python bradley-terry.py \
-  --folder "pairwise-evals" \
-  --no-load \
-  --no-save
-```
-
----
-
-## Output Files
-
-- **Step 1**: `all_model_completions_regular.json` or `all_model_completions_adversarial.json` - Contains dialogue data with model completions
-- **Step 2**: `pairwise-evals/` folder - Contains JSONL files with pairwise evaluations for each model pair
-- **Step 3**: Console output showing model rankings and optionally a leaderboard JSON file (if `--leaderboard-output` is specified)
-
----
-
-## Requirements
-
-All required packages are listed in `requirements.txt`. After setting up the virtual environment and installing dependencies (see Setup section above), make sure you have API keys configured:
-
-- **OpenAI**: Set `OPENAI_API_KEY` environment variable or pass via `--api-key` argument
-- **Anthropic**: Set `ANTHROPIC_API_KEY` environment variable or pass via `--api-key` argument
-- **Google Gemini**: Set `GOOGLE_API_KEY` environment variable or pass via `--api-key` argument
-- **Custom API**: Pass both `--api-url` and optionally `--api-key` arguments
-
----
+Use `python add_new_model.py --help` and `python bradley-terry.py --help` for all supported arguments.
 
 If you would like the completions generated by each of the models that are on our leaderboard, please reach out to the corresponding author.
