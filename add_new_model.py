@@ -21,6 +21,7 @@ import concurrent.futures
 import glob
 import json
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -1532,17 +1533,15 @@ def parse_evaluation_result(evaluation_text):
         except json.JSONDecodeError:
             pass
 
-    # Fallback: try to extract simple winner format
-    if "A0493" in evaluation_text:
-        winner = "A0493"
-    elif "A0488" in evaluation_text:
-        winner = "A0488"
-    else:
+    # Fallback: a bare verdict such as "A0488++" with no JSON around it. Prose
+    # that only mentions the identifiers ("Unable to judge A0493 versus
+    # A0488.") is not a verdict, so it stays an error instead of becoming a
+    # win for whichever identifier was checked first. Errors are retried by
+    # --eval-only and skipped by the ranking.
+    bare_verdict = re.fullmatch(r"[\s\"'`*]*(A0493|A0488)(\+{0,5})[\s\"'`*.]*", evaluation_text)
+    if not bare_verdict:
         return {"error": "Could not parse evaluation"}
-
-    # Count confidence level
-    plus_count = evaluation_text.count("+")
-    confidence_str = "+" * plus_count if plus_count > 0 else ""
+    winner, confidence_str = bare_verdict.group(1), bare_verdict.group(2)
 
     # Return in the expected format
     return {
